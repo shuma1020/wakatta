@@ -2,6 +2,9 @@
 <nav class="menubar">
     <ul>
         <%= menu_link_to 'TOP', :root%>
-        <li><%= link_to '投稿', :posts%></li>
+        <%= menu_link_to '投稿', :posts%>
+        <%= menu_link_to 'ブログ', :posts%>
+        <%= menu_link_to '会員名簿', :posts%>
+        <%= menu_link_to '管理ページ', :posts%>
     </ul>
 </nav>
