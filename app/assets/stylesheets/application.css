@@ -207,3 +207,9 @@ body {
     margin-bottom: 0.3em;
   }
   
+  ul.toolbar,
+  div.toolbar{
+      padding: 15px 0;
+      font-size: 90%;
+      text-align: center;
+  }

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'top/index'
-  resources :posts
-  root to: "posts#index"
-  get "/about", to: "posts#about"
+  resources :members do
+    get "search", on: :collection
+  end
+  root  "top#index"
+  get "about", to: "top#about", as: "about"
 end
