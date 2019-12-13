@@ -1,10 +1,20 @@
 <%= image_tag "rails-logo.svg", size: "272x48", alt: "Wakatta"%>
+
+<% if current_member %>
+    <ul class="account-menu">
+        <%= current_member.name + "さん"%>
+        <%= menu_link_to "ログアウト", :session,
+            method: :delete, data: {confirm: "ログアウトしますか？"}%>
+    </ul>
+<% end %>
 <nav class="menubar">
     <ul>
         <%= menu_link_to 'TOP', :root%>
         <%= menu_link_to '投稿', :members%>
         <%= menu_link_to 'ブログ', :members%>
+        <% if current_member%>
         <%= menu_link_to '会員名簿', :members%>
         <%= menu_link_to '管理ページ', :members%>
+        <%end%>
     </ul>
 </nav>
