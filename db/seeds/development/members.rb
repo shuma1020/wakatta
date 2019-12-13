@@ -7,6 +7,8 @@ gnames = ["太郎", "次郎", "花子"]
     full_name: "#{fnames[idx % 4]} #{gnames[idx % 3]}",
     email: "#{names[idx]}@example.com",
     birthday: "1981-12-01",
-    administrator: (idx == 0)
+    administrator: (idx == 0),
+    password: "Wakatta!",
+    password_confirmation: "wakatta!"
   )
 end

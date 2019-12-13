@@ -1,24 +1,25 @@
+<%= render "shared/errors", obj: @member %>
 <table class="attr">
     <tr>
-        <th><%= form.label :name, "ユーザー名"%></th>
+        <th><%= form.label :name %></th>
         <td><%= form.text_field :name %></td>
     </tr>
     <tr>
-        <th><%= form.label :birthday, "誕生日",
+        <th><%= form.label :birthday,
                     for: "member_birthday_li"%></th>
         <td><%= form.date_select :birthday,
                  start_year: 1970, end_year: Time.current.year,
                  use_month_numbers: true%></td>
     </tr>
     <tr>
-        <th><%= form.label :email, "メールアドレス"%></th>
+        <th><%= form.label :email %></th>
         <td><%= form.text_field :email %></td>
     </tr>
     <tr>
-        <th>管理者</th>
+        <th><%= Member.human_attribute_name(:administrator) %></th>
         <td>
             <%= form.check_box :administrator %>
-            <%= form.label :administrator, "管理者" %>
+            <%= form.label :administrator %>
         </td>
     </tr>
 </table>

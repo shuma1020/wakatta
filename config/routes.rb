@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
   root  "top#index"
   get "about", to: "top#about", as: "about"
+  resource :session, only: [:create, :destroy]
 end
