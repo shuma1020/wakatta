@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'accounts/show'
+  get 'accounts/edit'
   get 'top/index'
   resources :members do
     get "search", on: :collection
@@ -6,4 +8,5 @@ Rails.application.routes.draw do
   root  "top#index"
   get "about", to: "top#about", as: "about"
   resource :session, only: [:create, :destroy]
+  resource :account, only: [:show, :edit, :update]
 end
