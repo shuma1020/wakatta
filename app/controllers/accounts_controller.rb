@@ -10,15 +10,12 @@ class AccountsController < ApplicationController
 
   def update
     @member =current_member
-    if @member.update(member_params)
-      redirect_to :account, notice: "アカウント情報を更新しました。"
+    p "0909090"
+    p @member.assign_attributes(params[:account])
+    if @member.save
+     redirect_to :account, notice: "アカウント情報を更新しました。"
     else
       render "edit"
     end
-  end
-
-  private
-  def member_params
-    params.require(:member).permit(:name, :email, :birthday, :password)
   end
 end

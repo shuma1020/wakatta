@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'passwords/edit'
   get 'accounts/show'
   get 'accounts/edit'
   get 'top/index'
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   get "about", to: "top#about", as: "about"
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
+  resource :password, only: [:show, :edit, :update]
 end

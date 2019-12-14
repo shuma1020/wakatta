@@ -9,6 +9,9 @@ class Member < ApplicationRecord
         length: {minimum: 2, maximum: 20, allow_blank: true},
         uniqueness: {case_sensitive: false}
     validates :email, email: {allow_blank: true}
+    
+    attr_accessor :current_password
+    validates :password, presence: {if: :current_password}
 
     class << self
         def search(query)
