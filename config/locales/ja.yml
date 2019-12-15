@@ -18,6 +18,14 @@ ja:
         expired_at: 掲載終了日
         no_expiration: 掲載終了時を設定しない
         member_only: 会員限定
+      entry:
+        title: タイトル
+        body: 本文
+        posted_at: 日時
+        status: 状態
+        status_draft: 下書き
+        stauts_member_only: 会員限定
+        status_public: 公開
     errors:
       messages:
         invalid: "の書式が正しくありません。"
