@@ -1,3 +1,4 @@
+
 names = %w(Taro Jiro Hana John Mike Sophy Bill Alex Mary Tom)
 fnames = ["佐藤", "鈴木", "高橋", "田中"]
 gnames = ["太郎", "次郎", "花子"]
@@ -8,7 +9,7 @@ gnames = ["太郎", "次郎", "花子"]
     email: "#{names[idx]}@example.com",
     birthday: "1981-12-01",
     administrator: (idx == 0),
-    password: "Wakatta!",
+    password: "wakatta!",
     password_confirmation: "wakatta!"
   )
 end

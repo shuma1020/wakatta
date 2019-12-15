@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       member: 会員情報
+      article: ニュース記事
     attributes:
       member:
         name: ユーザ名
@@ -10,6 +11,12 @@ ja:
         administrator: 管理者
         password: パスワード
         password_confirmation: パスワードの確認
+      article:
+        title: タイトル
+        body: 本文
+        released_at: 掲載開始日時
+        expired_at: 掲載終了日
+        member_only: 会員限定
     errors:
       messages:
         invalid: "の書式が正しくありません。"

@@ -16,6 +16,12 @@
         <th><%= form.label :email %></th>
         <td><%= form.text_field :email %></td>
     </tr>
+    <% if @member.new_record? %>
+    <tr>
+        <th><%= form.label :password, "パスワード" %></th>
+        <td><%= form.text_field :password %></td>
+    </tr>
+    <%end%>
     <tr>
         <th><%= Member.human_attribute_name(:administrator) %></th>
         <td>

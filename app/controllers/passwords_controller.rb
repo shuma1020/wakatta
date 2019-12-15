@@ -13,8 +13,7 @@ class PasswordsController < ApplicationController
     @member = current_member
     current_password = params[:account][:current_password]
     if current_password.present?
-      if p @member.authenticate(current_password)
-        p "%%%%"
+      if  @member.authenticate(current_password)
         @member.assign_attributes(params[:account])
           if @member.save
             redirect_to :account, notice: "パスワードを変更しました"
