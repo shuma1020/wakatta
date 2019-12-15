@@ -2,6 +2,7 @@ class MembersController < ApplicationController
     before_action :login_required
     def index
         @members = Member.order("id")
+        .page(params[:page]).per(15)
     end
 
     def show
@@ -40,8 +41,10 @@ class MembersController < ApplicationController
         @member.destroy
         redirect_to :members, notice: "会員を削除しました。"
     end
+
     def search
         @members = Member.search(params[:q])
+            .page(params[:page]).per(15)
         render "index"
     end
 

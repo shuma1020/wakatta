@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'email_validator', '~> 2.0', '>= 2.0.1'
 gem 'rails-i18n'
+gem 'kaminari'
+gem 'kaminari-i18n'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
