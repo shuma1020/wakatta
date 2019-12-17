@@ -24,7 +24,7 @@ ja:
         posted_at: 日時
         status: 状態
         status_draft: 下書き
-        stauts_member_only: 会員限定
+        status_member_only: 会員限定
         status_public: 公開
     errors:
       messages:
