@@ -1,21 +1,23 @@
 Rails.application.routes.draw do
-  get 'entries/index'
-  get 'entries/show'
-  get 'entries/new'
-  get 'entries/edit'
-  get 'passwords/edit'
-  get 'accounts/show'
-  get 'accounts/edit'
-  get 'top/index'
+  root "top#index"
+  get "about" => "top#about", as: "about"
+  get "bad_request" => "top#bad_request"
+  get "forbidden" => "top#forbidden"
+  get "internal_server_error" => "top#internal_server_error"
+
+  1.upto(18) do |n|
+    get "lesson/step#{n}(/:name)" => "lesson#step#{n}"
+  end
+
   resources :members do
     get "search", on: :collection
     resources :entries, only: [:index]
   end
-  root  "top#index"
-  get "about", to: "top#about", as: "about"
+
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]
+
   resources :articles
   resources :entries
 end
