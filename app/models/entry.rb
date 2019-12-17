@@ -7,7 +7,7 @@ class Entry < ApplicationRecord
     validates :body, :posted_at, presence: true
     validates :stauts, inclusion: {in: STATUS_VALUES}
 
-    scope :common ->  {where(status: "public")}
+    scope :common, ->  {where(status: "public")}
     scope :published, -> {where("status <> ?", "draft")}
     scope :full, -> (member){
         where("status <> ? OR member_id = ?", "draft", member.id)}
