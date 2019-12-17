@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
         articles = articles.open_to_the_public unless current_member
         
         unless current_member&. administrator?
-            @articles = @articles.visible
+            articles = articles.visible
         end
         @article = Article.find(params[:id])
     end
