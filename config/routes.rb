@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'top/index'
+  end
   root "top#index"
   get "about" => "top#about", as: "about"
   get "bad_request" => "top#bad_request"
@@ -22,5 +25,8 @@ Rails.application.routes.draw do
   resources :entries do
     patch "like", "unlike", on: :member
     get "voted", on: :collection
+  end
+  namespace :admin do
+    root "top#index"
   end
 end
