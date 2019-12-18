@@ -15,7 +15,7 @@
                  start_year: 1970, end_year: Time.current.year,
                  use_month_numbers: true%></td>
     </tr>
-    <% if controller.kind_of?(MembersController)%>
+    <% if controller.kind_of?(Admin::MembersController)%>
     <tr>
         <th><%= form.label :email %></th>
         <td><%= form.text_field :email %></td>
