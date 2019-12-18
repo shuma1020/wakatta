@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   resource :password, only: [:show, :edit, :update]
 
   resources :articles
-  resources :entries
+  resources :entries do
+    patch "like", "unlike", on: :member
+    get "voted", on: :collection
+  end
 end
