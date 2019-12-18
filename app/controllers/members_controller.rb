@@ -50,6 +50,7 @@ class MembersController < ApplicationController
 
     private def member_params
         attrs = [
+            :new_profile_picture,
             :name,
             :full_name,
             :birthday,
