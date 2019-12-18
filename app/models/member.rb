@@ -2,6 +2,9 @@ class Member < ApplicationRecord
     has_secure_password
 
     has_many :entries, dependent: :destroy
+    has_one_attached :profile_picture
+    attribute :new_profile_picture
+
     validates :name, presence: true,
         format: {
             with: /\A[A-Za-z][A-Za-z0-9]*\z/, 

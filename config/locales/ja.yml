@@ -5,6 +5,7 @@ ja:
       article: ニュース記事
     attributes:
       member:
+        new_profile_picture: プロフィール画像
         name: ユーザ名
         birthday: 誕生日
         email: メールアドレス
