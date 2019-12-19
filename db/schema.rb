@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_012142) do
+ActiveRecord::Schema.define(version: 2019_12_19_024024) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_012142) do
     t.boolean "member_only", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "youtube_url"
+    t.string "youtube_url_edit"
   end
 
   create_table "categories", force: :cascade do |t|

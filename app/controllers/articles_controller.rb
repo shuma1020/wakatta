@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
     before_action :login_required, except: [:index, :show]
 
     def index
-        @articles = Article.order(released_at: :desc)
+        @articles = Article.visible.order(released_at: :desc)
 
         @articles = @articles.open_to_the_public unless current_member
 
@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     end
 
     def show
-        articles = Article.all 
+        articles = Article.visible 
         articles = articles.open_to_the_public unless current_member
         
         unless current_member&. administrator?
@@ -23,47 +23,6 @@ class ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
 
-    def new
-        @article = Article.new
-    end
-
-    def edit
-        @article = Article.find(params[:id])
-    end
-
-    def create
-        @article = Article.new(article_params)
-        if @article.save
-            redirect_to @article, notice: "ニュースを登録しました"
-        else
-         render "new"
-        end
-    end
     
-    def update
-        @article = Article.find(params[:id])
-        @article.assign_attributes(article_params)
-        if @article.save
-            redirect_to @article, notice: "ニュースを更新しました。"
-        else
-            render "edit"
-        end
-    end
-
-    def destroy
-        @article = Article.find(params[:id])
-        @article.destroy
-        redirect_to :articles
-    end
-
-    private def article_params
-        params.required(:article).permit(
-          :title,
-          :body,
-          :released_at,
-          :no_expiration,
-          :expired_at,
-          :member_only
-        )
-      end
+    
 end

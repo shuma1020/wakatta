@@ -5,6 +5,17 @@
     <th><%= form.label :title %></th>
     <td><%= form.text_field :title, size: 20 %></td>
   </tr>
+  <% if request.path.include?("edit")%>
+    <tr>
+      <th><%= form.label :動画リンク %></th>
+      <td><%= form.url_field :youtube_url_edit, size: 20 %></td>
+    </tr>
+    <%else%>
+    <tr>
+      <th><%= form.label :動画リンク %></th>
+      <td><%= form.url_field :youtube_url, size: 20 %></td>
+    </tr>
+  <%end%>
   <tr>
     <th><%= form.label :body %></th>
     <td><%= form.text_area :body, rows: 10, cols: 45 %></td>

@@ -9,8 +9,5 @@ class MembersController < ApplicationController
         @member = Member.find(params[:id])
     end
 
-    def new
-        @member = Member.new(birthday: Date.new(1980,1,1))
-    end
 
 end
