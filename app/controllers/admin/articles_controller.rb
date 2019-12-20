@@ -51,7 +51,7 @@ class Admin::ArticlesController < Admin::Base
     end
 
     def category
-        
+
     end
 
     private def article_params
