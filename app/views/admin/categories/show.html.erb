@@ -1,0 +1,12 @@
+<% @page_title = @category.name %>
+<h1><%= @category.name %></h1>
+  <table class="attr">
+    <% @articles.each do |article| %>
+    <tr>
+      <th>タイトル</th>
+      <td><%= article.title %></td>
+    </tr>
+    <% end %>
+  </table>
+
+
