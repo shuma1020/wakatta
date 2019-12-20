@@ -1,5 +1,5 @@
 class Admin::ArticlesController < Admin::Base
-    
+
 
     def index
         @articles = Article.order(released_at: :desc).page(params[:page]).per(5)
@@ -11,6 +11,7 @@ class Admin::ArticlesController < Admin::Base
 
     def new
         @article = Article.new
+        @article.manages.build
     end
 
     def edit
@@ -29,10 +30,10 @@ class Admin::ArticlesController < Admin::Base
         if @article.save
             redirect_to [:admin, @article], notice: "ニュースを登録しました"
         else
-         render "new"
+            render "new"
         end
     end
-    
+
     def update
         @article = Article.find(params[:id])
         @article.assign_attributes(article_params)
@@ -46,17 +47,22 @@ class Admin::ArticlesController < Admin::Base
     def destroy
         @article = Article.find(params[:id])
         @article.destroy
-        redirect_to :admin_articles
+        redirect_to :admin_category_articles
+    end
+
+    def category
+        
     end
 
     private def article_params
         params.required(:article).permit(
-          :title,
-          :body,
-          :released_at,
-          :no_expiration,
-          :expired_at,
-          :member_only
+            :title,
+            :body,
+            :released_at,
+            :no_expiration,
+            :expired_at,
+            :member_only,
+            { :category_ids=> [] }
         )
-      end
+        end
 end

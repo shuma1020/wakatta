@@ -27,4 +27,6 @@ class Article < ApplicationRecord
         where("released_at <= ?", now)
           .where("expired_at > ? OR expired_at IS NULL", now)
       end
+      has_many :manages
+      has_many :categories, through: :manages
 end

@@ -32,5 +32,9 @@ Rails.application.routes.draw do
       get "search", on: :collection
     end
     resources :articles
+    resources :categories do
+      resources :articles, only: [:index,:show]
+      get "search", on: :collection
+    end
   end
 end

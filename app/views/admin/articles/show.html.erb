@@ -26,8 +26,16 @@
         <th>会員限定</th>
         <td><%= @article.member_only? ? "○" : "ー" %></td>
     </tr>
+    <% if @article.youtube_url? %>
     <tr>
         <th>参考動画</th>
         <td><iframe width="440" height="215" src="https://www.youtube.com/embed/<%= @article.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
     </tr>
+    <% end %>
+    <tr>
+        <th>カテゴリ</th>
+        <% @article.categories.each do |category| %>
+            <td><%= category.name %></td>
+    </tr>
+<% end %>
 </table>
