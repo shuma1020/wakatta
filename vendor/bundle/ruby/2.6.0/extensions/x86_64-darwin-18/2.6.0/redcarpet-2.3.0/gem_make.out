@@ -1,0 +1,24 @@
+current directory: /Users/shuma/dev/wakatta/vendor/bundle/ruby/2.6.0/gems/redcarpet-2.3.0/ext/redcarpet
+/Users/shuma/.rbenv/versions/2.6.5/bin/ruby -I /Users/shuma/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20191220-43181-48xtfn.rb extconf.rb
+creating Makefile
+
+current directory: /Users/shuma/dev/wakatta/vendor/bundle/ruby/2.6.0/gems/redcarpet-2.3.0/ext/redcarpet
+make "DESTDIR=" clean
+
+current directory: /Users/shuma/dev/wakatta/vendor/bundle/ruby/2.6.0/gems/redcarpet-2.3.0/ext/redcarpet
+make "DESTDIR="
+compiling autolink.c
+compiling buffer.c
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling html.c
+compiling html_smartypants.c
+compiling markdown.c
+compiling rc_markdown.c
+compiling rc_render.c
+compiling stack.c
+linking shared-object redcarpet.bundle
+
+current directory: /Users/shuma/dev/wakatta/vendor/bundle/ruby/2.6.0/gems/redcarpet-2.3.0/ext/redcarpet
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 redcarpet.bundle ./.gem.20191220-43181-10ak9ib

@@ -2,6 +2,8 @@ class Article < ApplicationRecord
     validates :title, :body, :released_at, presence: true
     validates :title, length: { maximum: 80}
     validates :body, length: { maximum: 2000}
+    belongs_to :member
+    has_many :comments
     def no_expiration
         expired_at.nil?
     end
@@ -23,7 +25,7 @@ class Article < ApplicationRecord
     scope :open_to_the_public, -> { where(member_only: false)}
     scope :visible, -> do
         now = Time.current
-    
+
         where("released_at <= ?", now)
           .where("expired_at > ? OR expired_at IS NULL", now)
       end

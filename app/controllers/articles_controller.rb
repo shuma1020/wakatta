@@ -14,15 +14,17 @@ class ArticlesController < ApplicationController
     end
 
     def show
-        articles = Article.visible 
+        articles = Article.visible
         articles = articles.open_to_the_public unless current_member
-        
+
         unless current_member&. administrator?
             articles = articles.visible
         end
         @article = Article.find(params[:id])
+        @comments = @article.comments
+        @comment = Comment.new
     end
 
-    
-    
+
+
 end

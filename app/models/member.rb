@@ -5,6 +5,8 @@ class Member < ApplicationRecord
     has_many :votes, dependent: :destroy
     has_many :voted_entries, through: :votes, source: :entry
     has_one_attached :profile_picture
+    has_many :comments
+    has_many :articeles, dependent: :destroy
     attribute :new_profile_picture
 
     validates :name, presence: true,
